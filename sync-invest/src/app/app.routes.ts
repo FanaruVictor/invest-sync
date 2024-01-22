@@ -15,6 +15,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'home',
+    loadChildren: () =>
+      import('./modules/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'notfound',
   },

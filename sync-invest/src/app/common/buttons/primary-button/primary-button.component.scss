@@ -11,3 +11,11 @@ button {
     background: #000;
   }
 }
+
+@media (hover: none) {
+  button {
+    &:hover {
+      background-color: var(--btn-bg-color);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<app-icon-button
+  class="open-nav"
+  googleIcon="navigate_next"
+  (clickEvent)="openNavigation()"
+></app-icon-button>
+
+<div class="navigation" [@openClose]="isOpen ? 'open' : 'closed'">
+  <app-icon-button
+    class="close-nav"
+    googleIcon="navigate_before"
+    (clickEvent)="closeNavigation()"
+  ></app-icon-button>
+  <app-secondary-button
+    type="button"
+    text="Home"
+    (clickEvent)="home()"
+  ></app-secondary-button>
+  <app-secondary-button
+    type="button"
+    text="Portfolio"
+    (clickEvent)="portfolio()"
+  ></app-secondary-button>
+</div>

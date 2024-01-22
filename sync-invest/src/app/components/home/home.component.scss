@@ -1,21 +1,23 @@
 :host {
   display: flex;
   flex-direction: column;
-  justify-items: center;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  padding: 25px;
+  min-height: calc(100vh - 60px);
+  max-width: 100%;
+  overflow-y: auto;
 }
+
 img {
-  width: 85%;
-  height: 85%;
+  width: 100%;
 }
 
 .links {
   display: flex;
   width: 100%;
-  gap: 25px;
-  height: 20%;
+  align-items: center;
+  justify-content: center;
   .card {
     min-height: 100%;
     display: flex;
@@ -23,6 +25,13 @@ img {
     flex-direction: column;
     text-align: start;
     padding: 15px;
+
+    .title {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
     p {
       margin: 0;
     }
@@ -33,12 +42,58 @@ img {
   }
 }
 
-@media screen and (max-width: 650px) {
+@media (max-width: 768px) {
+  .logo {
+    width: 70%;
+    height: 70%;
+  }
+
   .links {
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     .card {
-      width: 250px;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo {
+    width: 60%;
+    height: 60%;
+  }
+  .content {
+    flex-direction: column;
+
+    app-top {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .logo {
+    width: 40%;
+    height: 40%;
+  }
+
+  .content {
+    padding-left: 250px !important;
+
+    app-top {
+      min-width: 250px;
+    }
+  }
+}
+
+@media (hover: none) {
+  .links {
+    .card {
+      &:hover {
+        background: transparent;
+      }
     }
   }
 }

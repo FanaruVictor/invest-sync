@@ -1,18 +1,7 @@
-<div class="pages">
-  <app-secondary-button
-    type="button"
-    text="Home"
-    (clickEvent)="home()"
-  ></app-secondary-button>
-  <app-secondary-button
-    type="button"
-    text="Portfolio"
-    (clickEvent)="portfolio()"
-  ></app-secondary-button>
-
-</div>
-
-<div class="actions">
+@if(isLoggedIn){
+<div class="content" [ngClass]="{ border: isLoggedIn }">{{ currentPage }}</div>
+} @else{
+<div class="content">
   <app-primary-button
     type="button"
     text="Log in"
@@ -25,3 +14,4 @@
     (clickEvent)="signUp()"
   ></app-primary-button>
 </div>
+}

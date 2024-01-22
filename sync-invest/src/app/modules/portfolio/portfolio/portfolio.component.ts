@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SecondaryButtonComponent } from '../../../common/buttons/secondary-button/secondary-button.component';
 import { NgClass } from '@angular/common';
 import { CryptoComponent } from './crypto/crypto.component';
 import { StocksComponent } from './stocks/stocks.component';
+import { CurrentPageService } from '../../../services/ui/current-page.service';
 
 @Component({
-  selector: 'app-overview',
+  selector: 'app-portfolio',
   standalone: true,
   imports: [
     SecondaryButtonComponent,
@@ -13,11 +14,17 @@ import { StocksComponent } from './stocks/stocks.component';
     CryptoComponent,
     StocksComponent,
   ],
-  templateUrl: './overview.component.html',
-  styleUrl: './overview.component.scss',
+  templateUrl: './portfolio.component.html',
+  styleUrl: './portfolio.component.scss',
 })
-export class OverviewComponent {
+export class PortfolioComponent implements OnInit {
   isCrypto = true;
+
+  constructor(private currentPageService: CurrentPageService) {}
+
+  ngOnInit(): void {
+    this.currentPageService.changePage('Portfolio');
+  }
 
   crypto() {
     this.isCrypto = true;

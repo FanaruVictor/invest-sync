@@ -39,3 +39,12 @@ body {
   --hover-btn-bg-color: rgba(0, 0, 0, 0.5);
   --active-btn: rgb(0, 0, 0);
 }
+
+@media (hover: none) {
+  button,
+  .links {
+    &:hover {
+      background: transparent;
+    }
+  }
+}

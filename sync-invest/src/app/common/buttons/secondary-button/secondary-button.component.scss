@@ -11,3 +11,11 @@ button {
     background: var(--hover-btn-bg-color);
   }
 }
+
+@media (hover: none) {
+  button {
+    &:hover {
+      background: transparent;
+    }
+  }
+}
