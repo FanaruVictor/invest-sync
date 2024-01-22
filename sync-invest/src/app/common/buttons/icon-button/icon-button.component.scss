@@ -1,0 +1,15 @@
+button {
+  background: transparent;
+  color: var(--btn-color);
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+
+  &:hover {
+    background-color: var(--hover-btn-bg-color);
+  }
+
+  span {
+    padding: 3px;
+  }
+}

@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+img {
+  width: 85%;
+  height: 85%;
+}
+
+.links {
+  display: flex;
+  width: 100%;
+  gap: 25px;
+  height: 20%;
+  .card {
+    min-height: 100%;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    text-align: start;
+    padding: 15px;
+    p {
+      margin: 0;
+    }
+    &:hover {
+      border-radius: var(--border-radius);
+      background: #000;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .links {
+    flex-direction: column;
+    align-items: center;
+    .card {
+      width: 250px;
+    }
+  }
+}

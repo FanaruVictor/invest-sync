@@ -1,0 +1,16 @@
+<div class="chart-options">
+  <app-icon-button
+    googleIcon="pie_chart"
+    (clickEvent)="pie()"
+    [ngClass]="{ active: isPieChart }"
+  ></app-icon-button>
+  <app-icon-button
+    googleIcon="show_chart"
+    (clickEvent)="line()"
+    [ngClass]="{ active: !isPieChart }"
+  ></app-icon-button>
+</div>
+
+@if(isPieChart){
+<div id="chart-pie"></div>
+} @else{}

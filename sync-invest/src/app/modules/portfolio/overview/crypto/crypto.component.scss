@@ -1,0 +1,14 @@
+.chart-options {
+  align-items: center;
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+  padding-bottom: 15px;
+  
+  app-icon-button {
+    border-radius: var(--border-radius);
+  }
+  .active {
+    background-color: var(--active-btn);
+  }
+}

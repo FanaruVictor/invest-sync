@@ -1,0 +1,26 @@
+main {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: inherit;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  padding-bottom: 15px;
+  height: calc(100vh - 60px);
+}
+
+@media screen and (max-width: 650px) {
+  .content {
+    width: 100%;
+  }
+}

@@ -1,0 +1,41 @@
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--color);
+}
+
+:root {
+  --bg-color: rgb(23, 25, 46);
+  --color: rgb(231, 231, 231);
+  --border-radius: 12px;
+  --btn-color: rgb(231, 231, 231);
+  --btn-bg-color: rgb(92, 92, 92);
+  --hover-btn-bg-color: rgba(0, 0, 0, 0.5);
+  --active-btn: rgb(0, 0, 0);
+}
