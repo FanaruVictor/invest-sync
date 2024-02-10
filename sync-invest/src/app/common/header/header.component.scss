@@ -1,12 +1,132 @@
+::-webkit-scrollbar-thumb {
+  background: var(--search-scroll-bg-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .search-wrapper {
+    position: unset !important;
+  }
+  .search {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
 .content {
   display: flex;
   height: 60px;
-  gap: 15px;
+  gap: 25px;
   justify-content: end;
   align-items: center;
   padding-right: 15px;
+
+  .search-wrapper {
+    position: relative;
+    .text {
+      border-radius: var(--border-radius);
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      padding-right: 10px;
+
+      input {
+        font-size: var(--standard-fs);
+        padding: 10px;
+
+        outline: none;
+        border: none;
+        background-color: transparent;
+        color: var(--color);
+        width: 100%;
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: var(--color);
+          opacity: 0.8;
+        }
+      }
+
+      span {
+        cursor: pointer;
+      }
+    }
+
+    button {
+      width: 300px;
+      border-radius: var(--border-radius);
+      border: 0;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      font-size: var(--standard-fs);
+      background-color: var(--search-bg-color);
+      color: var(--color);
+    }
+
+    .search {
+      width: 500px;
+      height: 700px;
+      z-index: 20;
+      top: 0px;
+      right: 0px;
+      position: absolute;
+      border-radius: var(--border-radius);
+      background-color: var(--search-bg-color);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .actions {
+        text-align: end;
+
+        span {
+          cursor: pointer;
+        }
+      }
+
+      .results {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        line-height: 40px;
+        font-weight: bold;
+        width: 100%;
+
+        .result {
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+          padding: 0 5px;
+ 
+          &:hover {
+            border-radius: var(--border-radius);
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
 }
 
 .border {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 1025px) {
+  .content {
+    padding-left: 250px !important;
+  }
+}
+@media (max-width: 768px) {
+  .content {
+    padding-left: 50px !important;
+  }
 }

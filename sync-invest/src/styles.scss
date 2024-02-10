@@ -1,21 +1,21 @@
-/* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
+  padding: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--scroll-bg-color);
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
   cursor: pointer;
 }
 
@@ -31,6 +31,8 @@ body {
 }
 
 :root {
+  --scroll-bg-color: rgb(0, 2, 29);
+  --search-scroll-bg-color: rgb(58, 58, 58);
   --bg-color: rgb(23, 25, 46);
   --color: rgb(231, 231, 231);
   --border-radius: 12px;
@@ -38,6 +40,8 @@ body {
   --btn-bg-color: rgb(92, 92, 92);
   --hover-btn-bg-color: rgba(0, 0, 0, 0.5);
   --active-btn: rgb(0, 0, 0);
+  --search-bg-color: rgba(92, 92, 92);
+  --standard-fs: 16px;
 }
 
 @media (hover: none) {

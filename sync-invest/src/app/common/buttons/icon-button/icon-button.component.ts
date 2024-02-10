@@ -13,7 +13,6 @@ export class IconButtonComponent {
   @Output() clickEvent = new EventEmitter();
 
   click() {
-    console.log('asdfasd');
     this.clickEvent.emit();
   }
 }

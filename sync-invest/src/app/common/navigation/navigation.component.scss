@@ -2,7 +2,12 @@
   .navigation {
     width: 100%;
   }
+
+  .open-nav {
+    left: 0px !important;
+  }
 }
+
 @media ((min-width: 769px) and (max-width: 1024px)) {
   .navigation {
     width: 50%;

@@ -4,6 +4,8 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
+import * as https from 'https';
+import * as fs from 'fs';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -20,9 +22,12 @@ export function app(): express.Express {
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
-  server.get('*.*', express.static(browserDistFolder, {
-    maxAge: '1y'
-  }));
+  server.get(
+    '*.*',
+    express.static(browserDistFolder, {
+      maxAge: '1y',
+    })
+  );
 
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
@@ -44,10 +49,15 @@ export function app(): express.Express {
 }
 
 function run(): void {
-  const port = process.env['PORT'] || 4000;
-
+  const port = process.env['PORT'] || 4200;
+  // https certificates
+  const privateKey = fs.readFileSync('ssl/localhost.key');
+  const certificate = fs.readFileSync('ssl/localhost.crt');
   // Start up the Node server
-  const server = app();
+  const server = https.createServer(
+    { key: privateKey, cert: certificate },
+    app()
+  );
   server.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });

@@ -1,5 +1,46 @@
 @if(isLoggedIn){
-<div class="content" [ngClass]="{ border: isLoggedIn }">{{ currentPage }}</div>
+<div class="content" [ngClass]="{ border: isLoggedIn }">
+  @if(symbols.length > 0){
+  <div class="search-wrapper">
+    <button (click)="openSearch()">
+      <span class="material-symbols-outlined"> search </span>
+      Search
+    </button>
+    @if(isSearchOpened){
+    <div class="search">
+      <div class="actions">
+        <span class="material-symbols-outlined" (click)="closeSearch()">
+          close
+        </span>
+      </div>
+      <div class="text">
+        <input
+          #search
+          type="text"
+          placeholder="Search"
+          (input)="showResults()"
+        />
+        <span class="material-symbols-outlined" (click)="clearSearch()">
+          close
+        </span>
+      </div>
+      <div class="results">
+        @if(searchResults.length > 0){ @for(searchResult of searchResults; track
+        searchResults){
+        <div class="result">
+          {{ searchResult.symbol }} <span>{{ searchResult.price }}</span>
+        </div>
+        } }
+      </div>
+    </div>
+    }
+  </div>
+  }
+
+  <div>
+    {{ currentPage }}
+  </div>
+</div>
 } @else{
 <div class="content">
   <app-primary-button

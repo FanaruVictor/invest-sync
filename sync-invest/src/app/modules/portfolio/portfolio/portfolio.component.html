@@ -1,17 +1,17 @@
 <div class="navigation">
   <app-secondary-button
-    text="Stocks"
-    class="stocks"
-    [ngClass]="{ active: !isCrypto }"
-    width="100%"
-    (clickEvent)="stocks()"
-  ></app-secondary-button>
-  <app-secondary-button
     text="Crypto"
     class="crypto"
     width="100%"
     [ngClass]="{ active: isCrypto }"
     (clickEvent)="crypto()"
+  ></app-secondary-button>
+  <app-secondary-button
+    text="Stocks"
+    class="stocks"
+    [ngClass]="{ active: !isCrypto }"
+    width="100%"
+    (clickEvent)="stocks()"
   ></app-secondary-button>
 </div>
 @if (isCrypto){ <app-crypto></app-crypto> } @else { <app-stocks></app-stocks> }

@@ -31,7 +31,9 @@ export class NavigationComponent {
   isOpen = false;
 
   closeNavigation() {
-    this.isOpen = false;
+    if (window.innerWidth < 1025) {
+      this.isOpen = false;
+    }
   }
 
   openNavigation() {
